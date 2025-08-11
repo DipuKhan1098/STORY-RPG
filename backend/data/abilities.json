@@ -1,0 +1,55 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // abilities.json
+  // PURPOSE:
+  // - Passive effects that always apply once learned (race/class/gear/quests).
+  // EFFECT FIELDS:
+  // - effects.stats: flat stat bonuses (str,int,wis,end,dex,agi,luck,char)
+  // - effects.regen: per-turn HP/MP
+  // - effects.multipliers: % modifiers for damage taken/dealt, armor, expGain
+  // - effects.crit: crit chance from DEX disparity (playerDEX - enemyDEX)
+  // - effects.escape: escape chance from AGI disparity
+  // - effects.elemental.offense/defense: % per element in [-100..100]
+  // REQUIREMENTS:
+  // - requirements.stats/elements/level/classIds/raceIds
+  // SPECIAL:
+  // - isRaceAbility: true if this is the single innate ability granted by a race
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "abl_race_warmblood",
+    "name": "Warmblood",
+    "description": "Innate vitality and resilience.",
+    "effects": {
+      "stats": { "end": 2, "wis": 1 },
+      "regen": { "hpPerTurn": 1, "mpPerTurn": 0 },
+      "elemental": {
+        "defense": { "cold": 0 } // note: 'cold' is not in our 12; keep to spec if used
+      }
+    },
+    "requirements": {},
+    "isRaceAbility": true
+  },
+  {
+    "id": "abl_magus_lore",
+    "name": "Magus Lore",
+    "description": "Arcane training boosts INT and magical damage.",
+    "effects": {
+      "stats": { "int": 3 },
+      "multipliers": { "magicalDealt": 10 } // +10%
+    },
+    "requirements": { "level": 3, "stats": { "int": 10 } },
+    "isRaceAbility": false
+  },
+  {
+    "id": "abl_nimble_step",
+    "name": "Nimble Step",
+    "description": "Move like wind—higher crit and escape with agility.",
+    "effects": {
+      "crit": { "base": 5, "perDexDisparity": 1 },   // %; clamp final [0..100]
+      "escape": { "base": 25, "perAgiDisparity": 1 } // %; clamp [5..95]
+    },
+    "requirements": { "stats": { "agi": 8 } },
+    "isRaceAbility": false
+  }
+]

@@ -1,0 +1,40 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // monsters.json
+  // PURPOSE:
+  // - Non-villain enemies (cannot equip items).
+  // FIELDS:
+  // - baseStats (str,int,wis,end,dex,agi,luck,char)
+  // - elements.damage/resistance % in [-100..100]
+  // - spells[], skills[], abilities[]
+  // - loot: xp, gold[min,max], items[{ itemId, chance(0..1), qtyMin?, qtyMax? }]
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "mon_wolf_fire",
+    "name": "Ember Wolf",
+    "description": "A wolf wreathed in flickering embers.",
+    "baseStats": { "str": 5, "int": 2, "wis": 2, "end": 6, "dex": 5, "agi": 6, "luck": 2, "char": 1 },
+    "elements": { "damage": { "fire": 10 }, "resistance": { "fire": 20, "water": -10 } },
+    "spells": [],
+    "skills": ["skl_bleeding_edge"],
+    "abilities": [],
+    "loot": {
+      "xp": 12,
+      "gold": [3, 8],
+      "items": [{ "itemId": "itm_health_potion_s", "chance": 0.15, "qtyMin": 1, "qtyMax": 2 }]
+    },
+    "asset": { "imageUrl": "/assets/images/monsters/ember_wolf.png" }
+  },
+  {
+    "id": "mon_bandit",
+    "name": "Roadside Bandit",
+    "description": "A petty criminal looking for easy gold.",
+    "baseStats": { "str": 6, "int": 1, "wis": 1, "end": 5, "dex": 5, "agi": 5, "luck": 1, "char": 1 },
+    "elements": { "damage": {}, "resistance": {} },
+    "spells": [],
+    "skills": ["skl_power_strike"],
+    "abilities": [],
+    "loot": { "xp": 10, "gold": [5, 12], "items": [] }
+  }
+]

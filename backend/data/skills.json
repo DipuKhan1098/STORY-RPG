@@ -1,0 +1,48 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // skills.json
+  // PURPOSE:
+  // - Physical actions scaling on STR (weapons/techniques).
+  // FIELDS mirror spells but use:
+  // - scaling: { base, strMultiplier }
+  // - element imbues allowed; still pass through offense/resistance
+  // - unlocks often every 20 levels (documented in levelService)
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "skl_power_strike",
+    "name": "Power Strike",
+    "description": "A heavy blow that staggers a single target.",
+    "type": "damage",
+    "targeting": "single",
+    "scaling": { "base": 5, "strMultiplier": 1.5 },
+    "elements": [], // non-elemental physical
+    "cost": { "mp": 0, "hp": 0 },
+    "cooldown": 0,
+    "requirements": { "stats": { "str": 6 } }
+  },
+  {
+    "id": "skl_cyclone_spin",
+    "name": "Cyclone Spin",
+    "description": "Spin attack that damages all nearby enemies.",
+    "type": "damage",
+    "targeting": "aoe",
+    "scaling": { "base": 2, "strMultiplier": 1.1 },
+    "elements": [{ "key": "air", "mult": 0.1 }],
+    "aoe": { "radius": 1, "falloff": 0.05 },
+    "cooldown": 2,
+    "requirements": { "level": 5, "stats": { "str": 10, "dex": 6 } }
+  },
+  {
+    "id": "skl_bleeding_edge",
+    "name": "Bleeding Edge",
+    "description": "A precise cut that applies a bleeding DoT.",
+    "type": "damage",
+    "targeting": "single",
+    "scaling": { "base": 1, "strMultiplier": 0.8 },
+    "elements": [],
+    "dot": { "ticks": 3, "amountPerTick": 4, "usesScaling": false },
+    "cooldown": 1,
+    "requirements": { "level": 8, "stats": { "dex": 8 } }
+  }
+]

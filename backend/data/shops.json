@@ -1,0 +1,33 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // shops.json
+  // FIELDS:
+  // - items: [{ itemId, priceOverride? }]
+  // - buyMultiplier: price factor on buy (e.g., 1.0)
+  // - sellMultiplier: price factor on sell (e.g., 0.5)
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "shp_village_market",
+    "name": "Village Market",
+    "description": "A modest stall-lined street.",
+    "items": [
+      { "itemId": "itm_health_potion_s" },
+      { "itemId": "itm_bronze_sword", "priceOverride": 55 }
+    ],
+    "buyMultiplier": 1.0,
+    "sellMultiplier": 0.5,
+    "asset": { "imageUrl": "/assets/images/ui/shop_village.png" }
+  },
+  {
+    "id": "shp_mage_boutique",
+    "name": "Mage Boutique",
+    "description": "Specializes in arcane trinkets.",
+    "items": [
+      { "itemId": "itm_ember_ring" },
+      { "itemId": "itm_health_potion_s" }
+    ],
+    "buyMultiplier": 1.2,
+    "sellMultiplier": 0.6
+  }
+]

@@ -1,0 +1,87 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // storyNodes.json
+  // PURPOSE:
+  // - All story nodes grouped by storyId.
+  // NODE TYPES: 'intro' | 'shop' | 'battle' | 'end'
+  // RULES:
+  // - Exactly 1 intro per storyId.
+  // - Choices on intro/shop/end: { text, nextNodeId?, requirements?, rewards? }
+  // - Battle nodes use nextOnWin/nextOnLose/nextOnEscape instead of freeform choices.
+  // - Requirements hide choices if not met; Rewards apply on pick.
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "sto_village_intro",
+    "storyId": "story_village",
+    "type": "intro",
+    "title": "The Village Awakens",
+    "description": "Dawn breaks over the rooftops.",
+    "choices": [
+      {
+        "id": "ch1",
+        "text": "Visit the market",
+        "nextNodeId": "sto_village_shop",
+        "requirements": { "stats": { "char": 1 } },
+        "rewards": { "gold": 2 }
+      },
+      {
+        "id": "ch2",
+        "text": "Train with the guards",
+        "nextNodeId": "sto_village_battle_bandits"
+      }
+    ]
+  },
+  {
+    "id": "sto_village_shop",
+    "storyId": "story_village",
+    "type": "shop",
+    "shopId": "shp_village_market",
+    "choices": [
+      {
+        "id": "ch3",
+        "text": "Continue to the gates",
+        "nextNodeId": "sto_village_battle_bandits"
+      }
+    ]
+  },
+  {
+    "id": "sto_village_battle_bandits",
+    "storyId": "story_village",
+    "type": "battle",
+    "title": "Bandit Ambush",
+    "description": "Shadows leap from behind the carts.",
+    "monsters": ["mon_bandit"],
+    "environment": "roadside",
+    "nextOnWin": "sto_village_after_win",
+    "nextOnLose": "sto_village_after_lose",
+    "nextOnEscape": "sto_village_after_escape"
+  },
+  {
+    "id": "sto_village_after_win",
+    "storyId": "story_village",
+    "type": "end",
+    "title": "Safe Passage",
+    "description": "The road is clear—for now.",
+    "choices": [
+      { "id": "ch4", "text": "Return to Main Menu", "nextNodeId": null }
+    ]
+  },
+  {
+    "id": "sto_village_after_lose",
+    "storyId": "story_village",
+    "type": "end",
+    "title": "Defeat",
+    "description": "You awaken bruised and lighter of coin.",
+    "choices": []
+  },
+  {
+    "id": "sto_village_after_escape",
+    "storyId": "story_village",
+    "type": "end",
+    "title": "A Narrow Escape",
+    "description": "You slip away into the alleys.",
+    "choices": []
+  }
+]
+s

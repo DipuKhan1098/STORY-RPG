@@ -1,0 +1,61 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // spells.json
+  // PURPOSE:
+  // - Magical actions scaling on INT.
+  // FIELDS:
+  // - type: 'damage' | 'heal' | 'summon' | 'buff' | 'debuff' | 'mixed'
+  // - targeting: 'single' | 'aoe' | 'self'
+  // - scaling: { base, intMultiplier }         // raw = base + INT * intMultiplier
+  // - elements: [{ key, fixed?, mult? }]       // fixed adds, mult is +% (0.20 = +20%)
+  // - dot: { ticks, amountPerTick?, usesScaling? }  // DoT payload
+  // - summon: { monsterId, durationTurns?, replacesExisting? }
+  // - cost: { mp?, hp?, itemId? }
+  // - cooldown: number (turns)
+  // - requirements: stats/elements/classIds/raceIds/level
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "spl_fire_lance",
+    "name": "Fire Lance",
+    "description": "A concentrated spear of flame.",
+    "type": "damage",
+    "targeting": "single",
+    "scaling": { "base": 10, "intMultiplier": 1.2 },
+    "elements": [
+      { "key": "fire", "fixed": 5, "mult": 0.2 }
+    ],
+    "cost": { "mp": 6 },
+    "cooldown": 0,
+    "requirements": { "level": 1, "stats": { "int": 5 } },
+    "asset": { "icon": "/assets/images/spells/fire_lance.png" }
+  },
+  {
+    "id": "spl_ice_storm",
+    "name": "Ice Storm",
+    "description": "Shards of ice blast all foes.",
+    "type": "damage",
+    "targeting": "aoe",
+    "scaling": { "base": 8, "intMultiplier": 1.0 },
+    "elements": [
+      { "key": "water", "fixed": 3, "mult": 0.15 }
+    ],
+    "aoe": { "radius": 1, "falloff": 0.1 },
+    "cost": { "mp": 10 },
+    "cooldown": 2,
+    "requirements": { "level": 3, "stats": { "int": 8 } }
+  },
+  {
+    "id": "spl_summon_wolf",
+    "name": "Summon Ember Wolf",
+    "description": "Call a fiery wolf to fight at your side.",
+    "type": "summon",
+    "targeting": "self",
+    "scaling": { "base": 0, "intMultiplier": 0 },
+    "elements": [],
+    "summon": { "monsterId": "mon_wolf_fire", "durationTurns": 4, "replacesExisting": false },
+    "cost": { "mp": 12 },
+    "cooldown": 3,
+    "requirements": { "level": 5 }
+  }
+]

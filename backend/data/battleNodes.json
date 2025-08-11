@@ -1,0 +1,44 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // battleNodes.json
+  // PURPOSE:
+  // - Optional separate table if you want to isolate battle compositions.
+  // - storyNodes of type 'battle' can embed minimal info, or reference here.
+  // FIELDS:
+  // - enemies: mix of monsters and villains: [{ kind: 'monster'|'villain', id }]
+  // - rewards: optional extra rewards beyond enemy loot
+  // - nextOnWin/Lose/Escape: node IDs inside same story
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "btl_bandits_road",
+    "storyId": "story_village",
+    "title": "Bandits at the Road",
+    "description": "A trio blocks your path.",
+    "enemies": [
+      { "kind": "monster", "id": "mon_bandit" },
+      { "kind": "monster", "id": "mon_bandit" },
+      { "kind": "villain", "id": "vil_bandit_boss" }
+    ],
+    "environment": "roadside",
+    "rewards": { "xp": 10, "gold": 5, "items": [] },
+    "nextOnWin": "sto_village_after_win",
+    "nextOnLose": "sto_village_after_lose",
+    "nextOnEscape": "sto_village_after_escape"
+  },
+  {
+    "id": "btl_wolf_pack",
+    "storyId": "story_forest",
+    "title": "Wolf Pack",
+    "description": "Eyes gleam in the dark.",
+    "enemies": [
+      { "kind": "monster", "id": "mon_wolf_fire" },
+      { "kind": "monster", "id": "mon_wolf_fire" }
+    ],
+    "environment": "forest",
+    "rewards": { "xp": 8, "gold": 4, "items": [] },
+    "nextOnWin": null,
+    "nextOnLose": null,
+    "nextOnEscape": null
+  }
+]

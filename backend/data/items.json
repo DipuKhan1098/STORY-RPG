@@ -1,0 +1,65 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // items.json
+  // PURPOSE:
+  // - Consumables, equipment, crafting materials.
+  // EQUIPMENT SLOTS (11 total):
+  // - head, body, leg, shoe, mainWeapon, offWeapon, ringLeft, ringRight, necklace,
+  //   potionSlot1, potionSlot2 (potions stack)
+  // COMMON FIELDS:
+  // - type: weapon | armor_head | armor_body | armor_leg | armor_shoe | offhand |
+  //         ring | necklace | potion | accessory | material
+  // - slot: derived from type (must be valid)
+  // - cost/sellValue, stackable/maxStack
+  // - requirements: level/classIds/raceIds/stats/elements
+  // - bonuses: stats/offense/resistance/armor/physicalTaken/magicalTaken
+  // - potion: effectKind (heal/mpHeal/statBuff/statPermanent/elementBuff/regenBuff),
+  //           amount/perStatMap, durationTurns (0=permanent), cooldown
+  // - embedded: up to 5 combined abilities/spells/skills by ID
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "itm_bronze_sword",
+    "name": "Bronze Sword",
+    "description": "A simple blade for beginners.",
+    "type": "weapon",
+    "slot": "mainWeapon",
+    "cost": 50,
+    "sellValue": 25,
+    "stackable": false,
+    "requirements": { "level": 1, "stats": { "str": 5 } },
+    "bonuses": {
+      "stats": { "str": 2 },
+      "offense": { "metal": 5 },       // +5% metal offense
+      "resistance": { "metal": 0 },
+      "armor": 0
+    },
+    "embedded": { "abilities": [], "spells": [], "skills": ["skl_power_strike"] },
+    "asset": { "imageUrl": "/assets/images/items/bronze_sword.png" }
+  },
+  {
+    "id": "itm_ember_ring",
+    "name": "Ember Ring",
+    "description": "Warm to the touch; grants minor fire power.",
+    "type": "ring",
+    "slot": "ringLeft", // or ringRight when equipped
+    "cost": 120,
+    "sellValue": 60,
+    "stackable": false,
+    "requirements": { "stats": { "int": 5 } },
+    "bonuses": { "offense": { "fire": 10 }, "resistance": { "fire": 5 } },
+    "embedded": { "abilities": ["abl_magus_lore"], "spells": ["spl_fire_lance"], "skills": [] }
+  },
+  {
+    "id": "itm_health_potion_s",
+    "name": "Small Health Potion",
+    "description": "Heals 50 HP instantly.",
+    "type": "potion",
+    "slot": "potionSlot", // sits in potionSlot1/2
+    "cost": 20,
+    "sellValue": 10,
+    "stackable": true,
+    "maxStack": 99,
+    "potion": { "effectKind": "heal", "amount": 50, "durationTurns": 0 }
+  }
+]

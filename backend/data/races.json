@@ -1,0 +1,30 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // races.json
+  // PURPOSE:
+  // - Races with base stats, elements, and optional single innate ability.
+  // FIELDS:
+  // - raceAbilityId: null | abilityId (0 or 1 innate ability)
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "rac_human",
+    "name": "Human",
+    "description": "Adaptable and resilient.",
+    "baseStats": { "str": 1, "int": 1, "wis": 1, "end": 1, "dex": 1, "agi": 1, "luck": 1, "char": 1 },
+    "elements": { "damage": {}, "resistance": {} },
+    "raceAbilityId": "abl_race_warmblood",
+    "allowedClasses": ["cls_warrior", "cls_mage"],
+    "asset": { "imageUrl": "/uploads/races/human.png" }
+  },
+  {
+    "id": "rac_elf",
+    "name": "Elf",
+    "description": "Graceful and attuned to magic.",
+    "baseStats": { "str": 0, "int": 2, "wis": 1, "end": 0, "dex": 2, "agi": 1, "luck": 1, "char": 1 },
+    "elements": { "damage": { "light": 5 }, "resistance": { "darkness": 5 } },
+    "raceAbilityId": null,
+    "allowedClasses": ["cls_mage"],
+    "asset": { "imageUrl": "/uploads/races/elf.png" }
+  }
+]

@@ -1,0 +1,29 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // classes.json
+  // PURPOSE:
+  // - Character classes with base stats, elements, requirements, startingAction.
+  // FIELDS:
+  // - startingAction: null | { type: 'spell'|'skill', id: string } (0 or 1)
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "cls_warrior",
+    "name": "Warrior",
+    "description": "Frontline fighter relying on strength and stamina.",
+    "baseStats": { "str": 4, "int": 0, "wis": 0, "end": 3, "dex": 1, "agi": 1, "luck": 0, "char": 0 },
+    "elements": { "damage": { "metal": 5 }, "resistance": { "metal": 5 } },
+    "requirements": { "stats": { "str": 6 } },
+    "startingAction": { "type": "skill", "id": "skl_power_strike" },
+    "asset": { "imageUrl": "/uploads/classes/warrior.png" }
+  },
+  {
+    "id": "cls_mage",
+    "name": "Mage",
+    "description": "Scholar of arcane arts; fragile but powerful spells.",
+    "baseStats": { "str": 0, "int": 5, "wis": 2, "end": 0, "dex": 0, "agi": 0, "luck": 0, "char": 1 },
+    "elements": { "damage": { "fire": 5, "light": 5 }, "resistance": { "fire": 5 } },
+    "requirements": { "stats": { "int": 8 }, "elements": { "fire": 10 } },
+    "startingAction": { "type": "spell", "id": "spl_fire_lance" }
+  }
+]

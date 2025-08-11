@@ -1,0 +1,53 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // villains.json
+  // PURPOSE:
+  // - Boss-like enemies that CAN equip items.
+  // FIELDS:
+  // - same as monsters + equipped slots (no potion slots)
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "vil_bandit_boss",
+    "name": "Bandit Captain",
+    "description": "Leader of the roadside gang.",
+    "baseStats": { "str": 10, "int": 3, "wis": 3, "end": 12, "dex": 7, "agi": 6, "luck": 3, "char": 4 },
+    "elements": { "damage": { "metal": 10 }, "resistance": { "metal": 5 } },
+    "spells": [],
+    "skills": ["skl_power_strike", "skl_cyclone_spin"],
+    "abilities": ["abl_nimble_step"],
+    "equipped": {
+      "head": null,
+      "body": null,
+      "leg": null,
+      "shoe": null,
+      "mainWeapon": "itm_bronze_sword",
+      "offWeapon": null,
+      "ringLeft": null,
+      "ringRight": null,
+      "necklace": null
+    },
+    "loot": {
+      "xp": 40,
+      "gold": [20, 40],
+      "items": [{ "itemId": "itm_bronze_sword", "chance": 0.25 }]
+    },
+    "asset": { "imageUrl": "/assets/images/monsters/bandit_captain.png" }
+  },
+  {
+    "id": "vil_magus_apprentice",
+    "name": "Apprentice Magus",
+    "description": "Young but ambitious spellcaster.",
+    "baseStats": { "str": 3, "int": 12, "wis": 8, "end": 8, "dex": 6, "agi": 5, "luck": 4, "char": 5 },
+    "elements": { "damage": { "fire": 10, "light": 5 }, "resistance": { "fire": 10 } },
+    "spells": ["spl_fire_lance", "spl_ice_storm"],
+    "skills": [],
+    "abilities": ["abl_magus_lore"],
+    "equipped": {
+      "mainWeapon": null, "offWeapon": null,
+      "head": null, "body": null, "leg": null, "shoe": null,
+      "ringLeft": "itm_ember_ring", "ringRight": null, "necklace": null
+    },
+    "loot": { "xp": 45, "gold": [30, 60], "items": [{ "itemId": "itm_ember_ring", "chance": 0.10 }] }
+  }
+]

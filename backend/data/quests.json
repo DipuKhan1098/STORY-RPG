@@ -1,0 +1,31 @@
+[
+    
+  //////////////////////////////////////////////////////////////////////////////
+  // quests.json
+  // PURPOSE:
+  // - Optional: track questlines/flags used by requirements/rewards in story.
+  // FIELDS:
+  // - steps: ordered objectives; rewards at completion
+  // - flags: simple boolean markers referenced by story choices
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "qst_bandit_menace",
+    "name": "Bandit Menace",
+    "description": "Drive the bandits away from the village roads.",
+    "steps": [
+      { "id": "s1", "text": "Defeat the bandit ambush.", "completedFlag": "bandit_ambush_done" },
+      { "id": "s2", "text": "Confront the bandit captain.", "completedFlag": "bandit_boss_done" }
+    ],
+    "rewards": { "xp": 50, "gold": 40, "items": [] },
+    "flags": ["bandit_ambush_done", "bandit_boss_done"]
+  },
+  {
+    "id": "qst_market_errand",
+    "name": "Market Errand",
+    "description": "Pick up supplies from the market.",
+    "steps": [{ "id": "s1", "text": "Visit the Village Market.", "completedFlag": "market_visit" }],
+    "rewards": { "xp": 5, "gold": 5, "items": [{ "itemId": "itm_health_potion_s", "qty": 1 }] },
+    "flags": ["market_visit"]
+  }
+]

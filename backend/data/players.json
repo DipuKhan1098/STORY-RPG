@@ -1,0 +1,77 @@
+[
+  //////////////////////////////////////////////////////////////////////////////
+  // players.json
+  // PURPOSE:
+  // - Saved player profiles and runtime state.
+  // CORE FIELDS:
+  // - hp/mp and max values (derive from END/WIS but store current for runtime)
+  // - level/xp, neededXP
+  // - inventory: [{ itemId, qty }]
+  // - equipped: 11 slots (potions hold stacks)
+  // - spells/skills/abilities arrays (permanent learns)
+  // - currentStoryNodeId: where the player is in story
+  // - gold
+  //////////////////////////////////////////////////////////////////////////////
+
+  {
+    "id": "ply_001",
+    "name": "Aeris",
+    "gender": "female",
+    "raceId": "rac_elf",
+    "classId": null,
+    "level": 1,
+    "currentXP": 0,
+    "neededXP": 100,
+    "hp": 20,
+    "maxHp": 20,
+    "mp": 20,
+    "maxMp": 20,
+    "stats": { "str": 1, "int": 3, "wis": 2, "end": 2, "dex": 2, "agi": 2, "luck": 1, "char": 1 },
+    "elements": { "damage": {}, "resistance": {} },
+    "spells": [],
+    "skills": [],
+    "abilities": [],
+    "inventory": [{ "itemId": "itm_health_potion_s", "qty": 3 }],
+    "equipped": {
+      "head": null, "body": null, "leg": null, "shoe": null,
+      "mainWeapon": null, "offWeapon": null,
+      "ringLeft": null, "ringRight": null, "necklace": null,
+      "potion1": { "itemId": "itm_health_potion_s", "qty": 3 },
+      "potion2": null
+    },
+    "gold": 25,
+    "currentStoryNodeId": null,
+    "activeQuestState": {},
+    "summons": []
+  },
+  {
+    "id": "ply_002",
+    "name": "Bran",
+    "gender": "male",
+    "raceId": "rac_human",
+    "classId": "cls_warrior",
+    "level": 2,
+    "currentXP": 40,
+    "neededXP": 120,
+    "hp": 35,
+    "maxHp": 35,
+    "mp": 10,
+    "maxMp": 10,
+    "stats": { "str": 7, "int": 1, "wis": 1, "end": 3, "dex": 2, "agi": 2, "luck": 1, "char": 1 },
+    "elements": { "damage": { "metal": 5 }, "resistance": { "metal": 5 } },
+    "spells": [],
+    "skills": ["skl_power_strike"],
+    "abilities": [],
+    "inventory": [],
+    "equipped": {
+      "head": null, "body": null, "leg": null, "shoe": null,
+      "mainWeapon": "itm_bronze_sword", "offWeapon": null,
+      "ringLeft": null, "ringRight": null, "necklace": null,
+      "potion1": null, "potion2": null
+    },
+    "gold": 40,
+    "currentStoryNodeId": "sto_village_intro",
+    "activeQuestState": {},
+    "summons": []
+  }
+]
