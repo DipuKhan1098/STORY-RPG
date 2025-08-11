@@ -32,3 +32,114 @@
  * DEV NOTE:
  *  - Lazy load heavy admin editor components to keep initial bundle size smaller.
  */
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { PlayerProvider } from './contexts/PlayerContext';
+import { DataProvider } from './contexts/DataContext';
+import { AdminAuthProvider } from './contexts/AdminAuthContext';
+
+// Landing and Player pages
+import LandingPage from './pages/LandingPage';
+import PlayerMenuPage from './pages/player/PlayerMenu';
+import NewGamePage from './pages/player/NewGame';
+import RaceSelectPage from './pages/player/RaceSelect';
+import ClassSelectPage from './pages/player/ClassSelect';
+import GamePage from './pages/player/Game';
+
+// Admin pages (lazy loaded)
+import AdminLoginPage from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
+
+// Admin guard component
+const AdminGuard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // This would use AdminAuthContext to check authentication
+  // For now, just render children
+  return <>{children}</>;
+};
+
+// Error boundary component
+class ErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean; error?: Error }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error('Error boundary caught an error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold mb-4">Something went wrong</h1>
+            <p className="text-gray-400 mb-4">
+              {this.state.error?.message || 'An unexpected error occurred'}
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded"
+            >
+              Reload Page
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+const App: React.FC = () => {
+  return (
+    <ErrorBoundary>
+      <Router>
+        <AdminAuthProvider>
+          <DataProvider>
+            <PlayerProvider>
+              <div className="min-h-screen bg-gray-900 text-white">
+                <Routes>
+                  {/* Landing */}
+                  <Route path="/" element={<LandingPage />} />
+                  
+                  {/* Player routes */}
+                  <Route path="/play" element={<PlayerMenuPage />} />
+                  <Route path="/player/new" element={<NewGamePage />} />
+                  <Route path="/player/race" element={<RaceSelectPage />} />
+                  <Route path="/player/class" element={<ClassSelectPage />} />
+                  <Route path="/player/game" element={<GamePage />} />
+                  
+                  {/* Admin routes */}
+                  <Route path="/admin/login" element={<AdminLoginPage />} />
+                  <Route 
+                    path="/admin/*" 
+                    element={
+                      <AdminGuard>
+                        <AdminDashboard />
+                      </AdminGuard>
+                    } 
+                  />
+                  
+                  {/* Catch all */}
+                  <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+              </div>
+            </PlayerProvider>
+          </DataProvider>
+        </AdminAuthProvider>
+      </Router>
+    </ErrorBoundary>
+  );
+};
+
+export default App;
