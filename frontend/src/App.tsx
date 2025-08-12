@@ -42,10 +42,7 @@ import { AdminAuthProvider } from './contexts/AdminAuthContext';
 // Landing and Player pages
 import LandingPage from './pages/LandingPage';
 import PlayerMenuPage from './pages/player/PlayerMenu';
-import NewGamePage from './pages/player/NewGame';
-import RaceSelectPage from './pages/player/RaceSelect';
-import ClassSelectPage from './pages/player/ClassSelect';
-import GamePage from './pages/player/Game';
+
 
 // Admin pages (lazy loaded)
 import AdminLoginPage from './pages/admin/AdminLogin';
@@ -116,8 +113,7 @@ const App: React.FC = () => {
                   <Route path="/play" element={<PlayerMenuPage />} />
                   <Route path="/player/new" element={<NewGamePage />} />
                   <Route path="/player/race" element={<RaceSelectPage />} />
-                  <Route path="/player/class" element={<ClassSelectPage />} />
-                  <Route path="/player/game" element={<GamePage />} />
+                  
                   
                   {/* Admin routes */}
                   <Route path="/admin/login" element={<AdminLoginPage />} />
