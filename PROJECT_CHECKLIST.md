@@ -11,18 +11,18 @@ A comprehensive story-driven turn-based RPG with player client and admin panel, 
 **Estimated Time**: 2-3 days
 
 ### 1.1 Landing Page (`/`)
-- [x] **Design & Layout**
-  - [x] Dark gradient background (gray-900 → blue-900 → purple-900)
-  - [x] Animated background elements with blur effects
-  - [x] Centered layout with game title
-  - [x] Responsive design for mobile/desktop
-  - [x] Smooth animations (fade-in, hover effects)
+- [ ] **Design & Layout**
+  - [ ] Dark gradient background (gray-900 → blue-900 → purple-900)
+  - [ ] Animated background elements with blur effects
+  - [ ] Centered layout with game title
+  - [ ] Responsive design for mobile/desktop
+  - [ ] Smooth animations (fade-in, hover effects)
 
-- [x] **Functionality**
-  - [x] "Play Game" button → navigate to `/play`
-  - [x] "Admin Panel" button → navigate to `/admin/login`
-  - [x] Error handling with try→alert pattern
-  - [x] Hover animations and visual feedback
+- [ ] **Functionality**
+  - [ ] "Play Game" button → navigate to `/play`
+  - [ ] "Admin Panel" button → navigate to `/admin/login`
+  - [ ] Error handling with try→alert pattern
+  - [ ] Hover animations and visual feedback
 
 - [ ] **Enhancements Needed**
   - [ ] Add particle effects or subtle animations
@@ -31,17 +31,17 @@ A comprehensive story-driven turn-based RPG with player client and admin panel, 
   - [ ] Optimize loading performance
 
 ### 1.2 Player Menu (`/play`)
-- [x] **Design & Layout**
-  - [x] Consistent dark theme styling
-  - [x] Large action buttons with gradients
-  - [x] Centered layout with proper spacing
-  - [x] Back navigation to landing
+- [ ] **Design & Layout**
+  - [ ] Consistent dark theme styling
+  - [ ] Large action buttons with gradients
+  - [ ] Centered layout with proper spacing
+  - [ ] Back navigation to landing
 
-- [x] **Functionality**
-  - [x] "New Game" button → navigate to `/player/new`
-  - [x] "Continue" button (hidden as requested)
-  - [x] Back button → navigate to `/`
-  - [x] Error handling for navigation
+- [ ] **Functionality**
+  - [ ] "New Game" button → navigate to `/player/new`
+  - [ ] "Continue" button (hidden as requested)
+  - [ ] Back button → navigate to `/`
+  - [ ] Error handling for navigation
 
 - [ ] **Future Enhancements**
   - [ ] Continue game functionality (load saved players)
@@ -49,20 +49,20 @@ A comprehensive story-driven turn-based RPG with player client and admin panel, 
   - [ ] Game statistics display
 
 ### 1.3 New Game Page (`/player/new`)
-- [x] **Design & Layout**
-  - [x] Character creation form with card-style layout
-  - [x] Name input field with validation
-  - [x] Gender selection cards (Male/Female)
-  - [x] Visual icons for gender options
-  - [x] Form validation and error states
+- [ ] **Design & Layout**
+  - [ ] Character creation form with card-style layout
+  - [ ] Name input field with validation
+  - [ ] Gender selection cards (Male/Female)
+  - [ ] Visual icons for gender options
+  - [ ] Form validation and error states
 
-- [x] **Functionality**
-  - [x] Character name input (max 30 chars)
-  - [x] Gender selection (male/female cards)
-  - [x] Form validation (name required, gender required)
-  - [x] Create player API call (`POST /players`)
-  - [x] Navigate to race selection on success
-  - [x] Error handling with alerts
+- [ ] **Functionality**
+  - [ ] Character name input (max 30 chars)
+  - [ ] Gender selection (male/female cards)
+  - [ ] Form validation (name required, gender required)
+  - [ ] Create player API call (`POST /players`)
+  - [ ] Navigate to race selection on success
+  - [ ] Error handling with alerts
 
 - [ ] **Enhancements Needed**
   - [ ] Add character preview avatar
@@ -71,20 +71,20 @@ A comprehensive story-driven turn-based RPG with player client and admin panel, 
   - [ ] Better form validation messages
 
 ### 1.4 Race Selection (`/player/race`)
-- [x] **Design & Layout**
-  - [x] Grid layout for race cards
-  - [x] Race cards with stats, elements, abilities
-  - [x] Character preview sidebar
-  - [x] Selection highlighting
-  - [x] Responsive grid (1-3 columns)
+- [ ] **Design & Layout**
+  - [ ] Grid layout for race cards
+  - [ ] Race cards with stats, elements, abilities
+  - [ ] Character preview sidebar
+  - [ ] Selection highlighting
+  - [ ] Responsive grid (1-3 columns)
 
-- [x] **Functionality**
-  - [x] Load races from DataContext
-  - [x] Display race stats, elements, abilities
-  - [x] Race selection with visual feedback
-  - [x] Character preview with stat calculations
-  - [x] Set race API call (`PUT /players/:id`)
-  - [x] Navigate to class selection
+- [ ] **Functionality**
+  - [ ] Load races from DataContext
+  - [ ] Display race stats, elements, abilities
+  - [ ] Race selection with visual feedback
+  - [ ] Character preview with stat calculations
+  - [ ] Set race API call (`PUT /players/:id`)
+  - [ ] Navigate to class selection
 
 - [ ] **Enhancements Needed**
   - [ ] Better race card designs
@@ -115,25 +115,25 @@ A comprehensive story-driven turn-based RPG with player client and admin panel, 
   - [ ] Display requirement tooltips
 
 ### 1.6 Context Providers
-- [x] **PlayerContext**
-  - [x] Player state management
-  - [x] Create player function
-  - [x] Update player function
-  - [x] Set race/class functions
-  - [x] Equipment management
-  - [x] XP and leveling functions
+- [ ] **PlayerContext**
+  - [ ] Player state management
+  - [ ] Create player function
+  - [ ] Update player function
+  - [ ] Set race/class functions
+  - [ ] Equipment management
+  - [ ] XP and leveling functions
 
-- [x] **DataContext**
-  - [x] Cache all game data
-  - [x] Load races, classes, items, spells, skills, abilities
-  - [x] Reload specific data types
-  - [x] Get by ID helper functions
+- [ ] **DataContext**
+  - [ ] Cache all game data
+  - [ ] Load races, classes, items, spells, skills, abilities
+  - [ ] Reload specific data types
+  - [ ] Get by ID helper functions
 
-- [x] **AdminAuthContext**
-  - [x] JWT token management
-  - [x] Login/logout functions
-  - [x] Token verification
-  - [x] Auth header generation
+- [ ] **AdminAuthContext**
+  - [ ] JWT token management
+  - [ ] Login/logout functions
+  - [ ] Token verification
+  - [ ] Auth header generation
 
 ---
 
@@ -233,18 +233,18 @@ A comprehensive story-driven turn-based RPG with player client and admin panel, 
 **Estimated Time**: 3-4 days
 
 ### 3.1 Admin Authentication
-- [x] **Admin Login (`/admin/login`)**
-  - [x] Login form with username/password
-  - [x] JWT authentication
-  - [x] Error handling
-  - [x] Redirect on success
-  - [x] Default credentials display
+- [ ] **Admin Login (`/admin/login`)**
+  - [ ] Login form with username/password
+  - [ ] JWT authentication
+  - [ ] Error handling
+  - [ ] Redirect on success
+  - [ ] Default credentials display
 
-- [x] **Admin Dashboard (`/admin`)**
-  - [x] Content overview statistics
-  - [x] Quick action buttons
-  - [x] System status display
-  - [x] Navigation to management pages
+- [ ] **Admin Dashboard (`/admin`)**
+  - [ ] Content overview statistics
+  - [ ] Quick action buttons
+  - [ ] System status display
+  - [ ] Navigation to management pages
 
 - [ ] **Admin Guard Component**
   - [ ] Route protection
