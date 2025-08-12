@@ -111,8 +111,7 @@ const App: React.FC = () => {
                   
                   {/* Player routes */}
                   <Route path="/play" element={<PlayerMenuPage />} />
-                  <Route path="/player/new" element={<NewGamePage />} />
-                  <Route path="/player/race" element={<RaceSelectPage />} />
+                 
                   
                   
                   {/* Admin routes */}
