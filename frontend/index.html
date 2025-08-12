@@ -1,0 +1,24 @@
+<!doctype html>
+<!--
+  public/index.html
+  PURPOSE:
+  - HTML shell for the React app. Vite injects script tags into this file.
+  - The #root div is where React mounts (see src/index.tsx).
+  NOTES:
+  - Keep this minimal; all meta and fonts can be added here if needed.
+-->
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Turn-Based Game</title>
+    <meta name="description" content="Turn-based story RPG with admin-driven content." />
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Optional: preload fonts or include global dark theme variables here -->
+  </head>
+  <body>
+    <div id="root"><!-- React mounts here --></div>
+    <!-- Vite will inject the compiled script here during dev/build -->
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
